@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>捕鱼游戏 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', 'Songti SC', 'SimSun', serif;
+      background-color: #f9f6f0;
+      color: #2d2a24;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fffcf7;
+      padding: 2.8rem 2.2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    /* 文章标题 */
+    .post-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #3b352c;
+      margin-bottom: 0.4rem;
+      border-left: 6px solid #d9c4a7;
+      padding-left: 1.2rem;
+    }
+
+    .sub-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: #8a7f6e;
+      border-bottom: 1px dashed #e3d9cb;
+      padding-bottom: 0.8rem;
+    }
+
+    .sub-meta span {
+      font-style: italic;
+    }
+
+    /* 导语 */
+    .lead {
+      font-size: 1.15rem;
+      color: #4f473b;
+      background: #f4efe7;
+      padding: 1.4rem 1.8rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      letter-spacing: 0.3px;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .lead strong {
+      font-weight: 600;
+      color: #3a3227;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 2rem 0 0.8rem 0;
+      color: #3b352c;
+      border-bottom: 1px solid #e7ddd0;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    /* 引用块 / 提示框 */
+    .reminder-box {
+      background: #f2efe7;
+      border-left: 6px solid #c4b094;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+      border-radius: 0 12px 12px 0;
+      font-style: normal;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .reminder-box p {
+      margin-bottom: 0.4rem;
+    }
+
+    .reminder-box .label {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: #7f6f58;
+      text-transform: uppercase;
+      border-bottom: 2px solid #d9c4a7;
+      padding-bottom: 2px;
+      margin-bottom: 0.6rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #5e5546;
+      border-left: 4px solid #d9c4a7;
+      padding: 0.6rem 1.2rem;
+      margin: 1.8rem 0;
+      background: #f9f5ee;
+      border-radius: 4px;
+    }
+
+    blockquote cite {
+      display: block;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #897d6c;
+      margin-top: 0.4rem;
+    }
+
+    /* 内联链接 */
+    a {
+      color: #6d5d47;
+      text-decoration: none;
+      border-bottom: 1px solid #d9c4a7;
+      transition: border-color 0.2s, color 0.2s;
+      padding: 0 2px;
+    }
+
+    a:hover {
+      color: #3b2f21;
+      border-bottom-color: #a38d72;
+    }
+
+    /* 特色列表 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+
+    .feature-list li {
+      padding: 0.6rem 0 0.6rem 2rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23b8a48b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+      background-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #4f4639;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #3f3a32;
+      padding-left: 0.8rem;
+      border-left: 2px solid #e3d9cb;
+      font-size: 0.98rem;
+    }
+
+    .visit-sentence {
+      background: #f2efe7;
+      padding: 1.2rem 1.6rem;
+      border-radius: 12px;
+      margin: 2rem 0 1rem 0;
+      font-size: 1.05rem;
+      text-align: center;
+      border: 1px solid #e3d4c0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e7ddd0;
+      margin: 2.2rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.8rem 1.2rem;
+      }
+
+      .post-title {
+        font-size: 1.7rem;
+        padding-left: 0.8rem;
+      }
+
+      .lead {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+      }
+
+      .reminder-box {
+        padding: 1rem 1.2rem;
+      }
+
+      .sub-meta {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+
+      .container {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .post-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1 class="post-title">捕鱼游戏 · 简明指南</h1>
+    <div class="sub-meta">
+      <span>一篇认真的访问笔记</span>
+      <span>2025 · 生活与提醒</span>
+    </div>
+  </header>
+
+  <!-- 导语 -->
+  <div class="lead">
+    <strong>不是所有消遣都值得被推荐，但如果你正想了解捕鱼游戏，</strong> 那么这篇短文会从最朴素的视角帮你理清方向。没有夸张的承诺，只有一份简洁的指南和几句重要的提醒。
+  </div>
+
+  <!-- 正文段落 -->
+  <h2>一、它到底是什么</h2>
+  <p>人们常说的捕鱼游戏，通常指一类以海洋场景为背景、通过发射炮弹捕获鱼群来获得积分的休闲互动。它的核心机制并不复杂：瞄准、开火、收获。但正因为上手快、画面热闹，它吸引了许多想要放松片刻的人。不过，轻松背后也有一些容易被忽略的细节。</p>
+
+  <h2>二、从哪儿开始</h2>
+  <p>如果你打算体验，第一步是找到一个稳定可靠的平台。目前网络上存在不少仿冒或粗制滥造的版本，体验差且可能存在风险。最直接的方式是访问原站 <a href="https://chinese-fishhunter.com">捕鱼游戏</a>，那里保留了最基础的玩法和界面，没有多余弹窗，适合作为了解的起点。</p>
+
+  <blockquote>
+    一个老玩家说过：“真正的好游戏不会催你，它会等你。” 捕鱼游戏也一样——节奏在自己手里。
+    <cite>—— 某论坛留言 · 2024</cite>
+  </blockquote>
+
+  <h2>三、三个常见场景</h2>
+  <ul class="feature-list">
+    <li><strong>忙完一天后</strong> —— 开几局，不追求高分，只看鱼群游过，是一种简单的解压方式。</li>
+    <li><strong>和朋友一起</strong> —— 轮流操作，比比谁更“准”，乐趣往往在互相打趣中翻倍。</li>
+    <li><strong>碎片时间</strong> —— 等车、午休、排队，几分钟一局，不拖沓，随时停下。</li>
+  </ul>
+
+  <!-- 引用提示 -->
+  <div class="reminder-box">
+    <span class="label">⚠️ 重要提醒</span>
+    <p><strong>适度游戏，保持清醒。</strong> 捕鱼游戏虽然轻松，但也容易让人不知不觉投入过多时间。建议每次游玩前设定一个提醒（比如手机闹钟），到点即停。另外，切勿在非官方或来路不明的页面输入个人信息。认准 <a href="https://chinese-fishhunter.com">捕鱼游戏</a> 这样的确定来源，能省去很多不必要的麻烦。</p>
+  </div>
+
+  <h2>四、FAQ 摘要</h2>
+  <div class="faq-item">
+    <div class="faq-q">Q：需要付费才能玩吗？</div>
+    <div class="faq-a">大部分基础模式是免费的，但一些特殊道具或加速功能可能需要内购。建议先免费体验，再决定是否投入。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q：为什么我打不到鱼？</div>
+    <div class="faq-a">可能是角度或时机问题，捕鱼游戏有一定随机性，多试几次就会找到手感。别着急，放松反而更容易命中。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q：网页版和客户端版有区别吗？</div>
+    <div class="faq-a">网页版无需下载，打开即玩，适合尝鲜；客户端通常画面更流畅、功能更全。根据你的设备和网络习惯选择就好。</div>
+  </div>
+
+  <!-- 访问句 -->
+  <div class="visit-sentence">
+    🐟 若想亲自看看，可以直接前往 <a href="https://chinese-fishhunter.com">捕鱼游戏</a>，那里有一片安静的海域等你。
+  </div>
+
+  <hr>
+
+  <p style="font-size: 0.9rem; color: #9b8f7e; text-align: center; margin-top: 0.5rem;">
+    保留所有权利 · 内容仅供参考 · 不构成任何诱导或投资建议
+  </p>
+</div>
+</body>
+</html>
